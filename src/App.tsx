@@ -1,13 +1,16 @@
-import './styles/theme.css';
+import { Container } from './components/Container';
 import './styles/global.css';
+import './styles/theme.css';
 
 function App() {
 
   return (
     <>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Container>
+        <section>
+          Lorem
+        </section>
+      </Container>
     </>
   )
 }
