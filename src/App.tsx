@@ -1,5 +1,6 @@
 import { Container } from './components/Container';
 import { CountDown } from './components/CountDown';
+import { Cycles } from './components/Cycles';
 import { DefaultInput } from './components/DefaultInput';
 import { Logo } from './components/Logo';
 import { Menu } from './components/Menu';
@@ -25,7 +26,7 @@ function App() {
       <Container>
         <form className='form' action=''>
           <div className='formRow'>
-            <DefaultInput id='meuInput' type='text' labelText='Teste'/>
+            <DefaultInput id='meuInput' type='text' labelText='Teste' placeholder='Digite algo' />
           </div>
 
           <div className='formRow'>
@@ -35,8 +36,7 @@ function App() {
           </div>
 
           <div className='formRow'>
-            <p>Ciclos</p>
-            <p>0 0 0 0 0 0 0 0</p>
+            <Cycles />
           </div>
 
           <div className='formRow'>
