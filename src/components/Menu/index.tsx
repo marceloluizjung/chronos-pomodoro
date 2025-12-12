@@ -9,6 +9,10 @@ export function Menu() {
 
     function handleThemeChange(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
         event.preventDefault(); //Caso tiver um redirecionamento na tag, não será feito
+        setTheme(prevTheme => {
+            const nextTheme = prevTheme === 'dark' ? 'light' : 'dark';
+            return nextTheme;
+        });
     }
 
     return (
