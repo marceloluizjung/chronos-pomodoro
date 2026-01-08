@@ -12,7 +12,7 @@ export function MainForm() {
 
             <div className='formRow'>
                 <p>
-                    Lorem ipsum dolor sit amet.
+                    Próximo intervalo é de 25 min
                 </p>
             </div>
 

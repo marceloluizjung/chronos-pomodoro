@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { TaskContext } from './contexts/TaskContext';
 import type { TaskStateModel } from './models/TaskStateModel';
 import { Home } from './pages/Home';
 import './styles/global.css';
@@ -20,7 +21,11 @@ const initialState: TaskStateModel = {
 function App() {
   const [state, setState] = useState(initialState);
 
-  return <Home state={state} setState={setState} />;
+  return (
+    <TaskContext.Provider value={{ chave: "Testes" }}>
+      <Home />
+    </TaskContext.Provider>
+  );
 }
 
 export default App
