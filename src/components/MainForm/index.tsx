@@ -44,7 +44,7 @@ export function MainForm() {
             ...prevState,
             config: { ...prevState.config },
             activeTask: newTask,
-            currentCycle: 1, // Conferir
+            currentCycle: nextCycle, // Conferir
             secondsRemaining,
             formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining), // Conferir
             tasks: [...prevState.tasks, newTask]
