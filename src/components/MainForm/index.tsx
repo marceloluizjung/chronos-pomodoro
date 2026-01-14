@@ -1,4 +1,4 @@
-import { PlayCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import { useRef } from "react";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import type { TaskModel } from "../../models/TaskModel";
@@ -51,6 +51,21 @@ export function MainForm() {
         }));
     }
 
+    function handleInterruptTask() {
+        setState(prevState => ({
+            ...prevState,
+            activeTask: null,
+            secondsRemaining: 0,
+            formattedSecondsRemaining: '00:00',
+            tasks: prevState.tasks.map(task => {
+                if (prevState.activeTask?.id === task.id) {
+                    task.interruptDate = Date.now();
+                }
+                return task;
+            })
+        }));
+    }
+
     return (
         <form onSubmit={handleCreateNewTask} className='form' action=''>
             <div className='formRow'>
@@ -73,7 +88,27 @@ export function MainForm() {
             }
 
             <div className='formRow'>
-                <DefaultButton icon={<PlayCircleIcon />} />
+                {
+                    !state.activeTask ? (
+                        <DefaultButton
+                            aria-label="Iniciar nova tarefa"
+                            title="Iniciar nova tarefa"
+                            type='submit'
+                            icon={<PlayCircleIcon />}
+                            key={'submit'}
+                        />
+                    ) : (
+                        <DefaultButton
+                            aria-label="Parar tarefa"
+                            title="Parar tarefa"
+                            type='button'
+                            color='red'
+                            icon={<StopCircleIcon />}
+                            onClick={handleInterruptTask}
+                            key={'button'}
+                        />
+                    )
+                }
             </div>
         </form>
     );
