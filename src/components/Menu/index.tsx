@@ -34,10 +34,10 @@ export function Menu() {
             <RouterLink className={styles.menuLink} href='/'>
                 <HouseIcon />
             </RouterLink>
-            <RouterLink className={styles.menuLink} href='#'>
+            <RouterLink className={styles.menuLink} href='/history'>
                 <HistoryIcon />
             </RouterLink>
-            <RouterLink className={styles.menuLink} href='#'>
+            <RouterLink className={styles.menuLink} href='/settings'>
                 <SettingsIcon />
             </RouterLink>
             <a className={styles.menuLink} href='#' onClick={handleThemeChange}>
