@@ -1,4 +1,5 @@
 export type AuthContextModel = {
     loginDate?: string,
-    userName?: string
+    userName?: string,
+    password?: string
 };
